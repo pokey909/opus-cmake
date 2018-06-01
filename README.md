@@ -7,7 +7,15 @@ cross-platform libopus with cmake and polly
 git clone --recursive git@github.com:pokey909/opus-cmake.git
 ```
 
-# Building with cmake
+# Requirements
+**Android**
+
+Download and install android ndk 17 to an arbitrary local folder and add an environment variable pointing to your NDK 17 installation.
+```
+export ANDROID_NDK_r17=/home/you/Android/ndk
+```
+
+# Building
 To improve the laborious process of typing long toolchain names, I included a toolchain selector
 which accepts a ```PLATFORM_TARGET``` variable and maps it to an approriate toolchain.
 
@@ -26,11 +34,12 @@ Here is a list of possible values
 | ios | clang, no codesign |
 | ```undefined``` | defaults to libcxx14 |
 
+To start the build
 ```
 mkdir build
 cmake .. -DPLATFORM_TARGET=<target>
-make
+cmake --build .
 ```
 
-# Using polly as build helper
+## Using polly as build helper
 Of course you can also use ruslo's excellent build tool polly which is included as a submodule under ```cmake/toolchains```.
