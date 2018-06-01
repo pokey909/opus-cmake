@@ -1,18 +1,5 @@
 cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
-### Hunter snapshot that will be used ###
-set(
-        HUNTER_CACHE_SERVERS
-        "http://maven.int.s-cloud.net/content/repositories/hunter-cache"
-        CACHE
-        STRING
-        "Hunter cache servers"
-)
-include("${CMAKE_CURRENT_LIST_DIR}/cmake/HunterGate.cmake")
-HunterGate(
-        URL "https://github.com/ruslo/hunter/archive/v0.21.19.tar.gz"
-        SHA1 "5ead1e069b437930d0de8a21824b20fb52b37b50"
-        LOCAL
-)
+
 project(Opus VERSION 1.2.1)
 
 add_library(opus
