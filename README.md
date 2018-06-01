@@ -1,6 +1,12 @@
 # opus-cmake
 cross-platform libopus with cmake and polly
 
+# Getting the source
+
+```
+git clone --recursive git@github.com:pokey909/opus-cmake.git
+```
+
 # Building with cmake
 To improve the laborious process of typing long toolchain names, I included a toolchain selector
 which accepts a ```PLATFORM_TARGET``` variable and maps it to an approriate toolchain.
