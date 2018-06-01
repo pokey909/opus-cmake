@@ -35,7 +35,28 @@
           </envs>
         </ADDITIONAL_GENERATION_ENVIRONMENT>
       </configuration>
-      <configuration PROFILE_NAME="android-x86_64-Debug" CONFIG_NAME="Debug" GENERATION_OPTIONS="-DPLATFORM_TARGET=android-x86_64">
+      <configuration PROFILE_NAME="android-x86_64-Release" CONFIG_NAME="MinSizeRel" GENERATION_OPTIONS="-DPLATFORM_TARGET=android-x86_64">
+        <ADDITIONAL_GENERATION_ENVIRONMENT>
+          <envs>
+            <env name="ANDROID_NDK_r17" value="$USER_HOME$/Library/Android/ndk" />
+          </envs>
+        </ADDITIONAL_GENERATION_ENVIRONMENT>
+      </configuration>
+      <configuration PROFILE_NAME="armv7a-Release" CONFIG_NAME="MinSizeRel" GENERATION_OPTIONS="-DPLATFORM_TARGET=android-v7a">
+        <ADDITIONAL_GENERATION_ENVIRONMENT>
+          <envs>
+            <env name="ANDROID_NDK_r17" value="$USER_HOME$/Library/Android/ndk" />
+          </envs>
+        </ADDITIONAL_GENERATION_ENVIRONMENT>
+      </configuration>
+      <configuration PROFILE_NAME="arm64-Release" CONFIG_NAME="MinSizeRel" GENERATION_OPTIONS="-DPLATFORM_TARGET=android-64-v8a">
+        <ADDITIONAL_GENERATION_ENVIRONMENT>
+          <envs>
+            <env name="ANDROID_NDK_r17" value="$USER_HOME$/Library/Android/ndk" />
+          </envs>
+        </ADDITIONAL_GENERATION_ENVIRONMENT>
+      </configuration>
+      <configuration PROFILE_NAME="android-x86-Release" CONFIG_NAME="MinSizeRel" GENERATION_OPTIONS="-DPLATFORM_TARGET=android-x86">
         <ADDITIONAL_GENERATION_ENVIRONMENT>
           <envs>
             <env name="ANDROID_NDK_r17" value="$USER_HOME$/Library/Android/ndk" />
@@ -46,7 +67,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="79f65ef3-72fb-4476-9520-1601f45c6296" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake/HunterGate.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake/toolchain_selector.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake/toolchain_selector.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/opus" beforeDir="false" afterPath="$PROJECT_DIR$/opus" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <ignored path="$PROJECT_DIR$/cmake-build-osx-debug/" />
@@ -54,6 +80,10 @@
     <ignored path="$PROJECT_DIR$/cmake-build-arm64-debug/" />
     <ignored path="$PROJECT_DIR$/cmake-build-android-x86-debug/" />
     <ignored path="$PROJECT_DIR$/cmake-build-android-x86_64-debug/" />
+    <ignored path="$PROJECT_DIR$/cmake-build-armv7a-release/" />
+    <ignored path="$PROJECT_DIR$/cmake-build-android-x86_64-release/" />
+    <ignored path="$PROJECT_DIR$/cmake-build-arm64-release/" />
+    <ignored path="$PROJECT_DIR$/cmake-build-android-x86-release/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -61,39 +91,25 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:OSX-Debug" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:android-x86_64-Release" />
   <component name="FileEditorManager">
     <leaf>
       <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="151" column="47" selection-start-line="151" selection-start-column="47" selection-end-line="151" selection-end-column="47" />
+            <state relative-caret-position="30">
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="toolchain_selector.cmake" pinned="false" current-in-tab="false">
+      <file leaf-file-name="toolchain_selector.cmake" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cmake/toolchain_selector.cmake">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="50" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
+            <state>
+              <caret column="5" selection-start-column="5" selection-end-column="5" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="403">
-              <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main.cpp">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -121,10 +137,10 @@
       <list>
         <option value="$PROJECT_DIR$/opus/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/HunterGate.cmake" />
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/PreLoad.cmake" />
-        <option value="$PROJECT_DIR$/cmake/toolchain_selector.cmake" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/cmake/toolchain_selector.cmake" />
       </list>
     </option>
   </component>
@@ -159,7 +175,18 @@
             <path>
               <item name="Opus" type="b2602c69:ProjectViewProjectNode" />
               <item name="opus-cmake" type="462c0819:PsiDirectoryNode" />
-              <item name="cmake-build-osx-debug" type="462c0819:PsiDirectoryNode" />
+              <item name="cmake" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Opus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="opus-cmake" type="462c0819:PsiDirectoryNode" />
+              <item name="opus" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Opus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="opus-cmake" type="462c0819:PsiDirectoryNode" />
+              <item name="opus" type="462c0819:PsiDirectoryNode" />
+              <item name="include" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -208,12 +235,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1527859581487</updated>
-      <workItem from="1527859583009" duration="4534000" />
+      <workItem from="1527859583009" duration="5881000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4534000" />
+    <option name="totallyTimeSpent" value="5881000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="6" />
@@ -221,8 +248,8 @@
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.39605355" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" visible="true" weight="0.32860824" />
-      <window_info anchor="bottom" id="CMake" weight="0.32860824" />
+      <window_info anchor="bottom" id="Messages" weight="0.32860824" />
+      <window_info anchor="bottom" id="CMake" visible="true" weight="0.32860824" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" />
@@ -283,24 +310,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="151" column="47" selection-start-line="151" selection-start-column="47" selection-end-line="151" selection-end-column="47" />
+        <state relative-caret-position="30">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cmake/toolchain_selector.cmake">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="50" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+        <state>
+          <caret column="5" selection-start-column="5" selection-end-column="5" />
         </state>
       </provider>
     </entry>
