@@ -1,0 +1,6 @@
+[submodule "cmake/toolchains"]
+	path = cmake/toolchains
+	url = https://github.com/pokey909/polly.git
+[submodule "opus"]
+	path = opus
+	url = https://github.com/xiph/opus.git

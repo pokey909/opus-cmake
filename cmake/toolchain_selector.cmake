@@ -1,0 +1,36 @@
+## This includes the Vita toolchain, must go before project definition
+# It is a convenience so you do not have to type
+# -DCMAKE_TOOLCHAIN_FILE=$VITASDK/share/vita.toolchain.cmake for cmake. It is
+# highly recommended that you include this block for all projects.
+if(NOT DEFINED PLATFORM_TARGET)
+    set(TOOLCHAIN_FILE "libcxx14.cmake")
+    message(WARNING "No platform target specified. Using libcxx generic toolchain!")
+else()
+    if("${PLATFORM_TARGET}" STREQUAL "android")
+        set(TOOLCHAIN_FILE "android-ndk-r11c-api-16-armeabi.cmake")
+    elseif("${PLATFORM_TARGET}" STREQUAL "android-64-v8a")
+        set(TOOLCHAIN_FILE "android-ndk-r17-api-21-arm64-v8a-neon-clang-libcxx14.cmake")
+    elseif("${PLATFORM_TARGET}" STREQUAL "android-x86")
+        set(TOOLCHAIN_FILE "android-ndk-r17-api-16-x86-clang-libcxx14.cmake")
+    elseif("${PLATFORM_TARGET}" STREQUAL "android-x86_64")
+        set(TOOLCHAIN_FILE "android-ndk-r17-api-21-x86-64-clang-libcxx14.cmake")
+    elseif("${PLATFORM_TARGET}" STREQUAL "android-v7a")
+        set(TOOLCHAIN_FILE "android-ndk-r17-api-16-armeabi-v7a-clang-libcxx14.cmake")
+    elseif(${PLATFORM_TARGET} STREQUAL "linux")
+        set(TOOLCHAIN_FILE "libcxx.cmake")
+    elseif(${PLATFORM_TARGET} STREQUAL "ios")
+        set(CMAKE_XCODE_ATTRIBUTE_ONLY_ACTIVE_ARCH NO)
+        set(CMAKE_IOS_INSTALL_COMBINED YES)
+        set(ENV{XCODE_XCCONFIG_FILE} ${CMAKE_CURRENT_LIST_DIR}/toolchains/scripts/NoCodeSign.xcconfig)
+        set(CMAKE_GENERATOR Xcode CACHE INTERNAL "" FORCE)
+        set(TOOLCHAIN_FILE "ios-soundcloud-nocodesign.cmake")
+    elseif(${PLATFORM_TARGET} STREQUAL "osx")
+        set(TOOLCHAIN_FILE "libcxx14.cmake")
+    elseif(${PLATFORM_TARGET} STREQUAL "osx-xcode")
+        set(TOOLCHAIN_FILE "osx-10-13.cmake")
+        set(CMAKE_GENERATOR Xcode CACHE INTERNAL "" FORCE)
+    endif()
+endif()
+
+set(CMAKE_TOOLCHAIN_FILE "${CMAKE_CURRENT_LIST_DIR}/toolchains/${TOOLCHAIN_FILE}" CACHE PATH "toolchain")
+
