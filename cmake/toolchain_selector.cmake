@@ -1,7 +1,4 @@
-## This includes the Vita toolchain, must go before project definition
-# It is a convenience so you do not have to type
-# -DCMAKE_TOOLCHAIN_FILE=$VITASDK/share/vita.toolchain.cmake for cmake. It is
-# highly recommended that you include this block for all projects.
+# Easing the pain to type full toolchain names
 if(NOT DEFINED PLATFORM_TARGET)
     set(TOOLCHAIN_FILE "libcxx14.cmake")
     message(WARNING "No platform target specified. Using libcxx generic toolchain!")
