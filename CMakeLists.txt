@@ -139,6 +139,13 @@ add_library(opus
 include_directories(opus/src opus/include opus/celt opus/silk opus/silk/float)
 
 add_definitions(-DOPUS_BUILD -DSTDC_HEADERS -DVAR_ARRAYS)
+set_target_properties(opus PROPERTIES PUBLIC_HEADER "opus/include/opus.h;opus/include/opus_custom.h;opus/include/opus_defines.h;opus/include/opus_multistream.h;opus/include/opus_types.h")
+
+install(TARGETS opus
+        RUNTIME DESTINATION bin
+        LIBRARY DESTINATION lib
+        ARCHIVE DESTINATION lib
+        PUBLIC_HEADER DESTINATION include)
 
 #find_library(log-lib log)
 #
