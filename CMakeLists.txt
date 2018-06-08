@@ -4,6 +4,8 @@ project(Opus VERSION 1.2.1)
 
 add_library(opus
         STATIC
+        opus/src/opus_multistream_decoder.c
+        opus/src/opus_multistream.c
         opus/src/opus_encoder.c
         opus/celt/celt_encoder.c
         opus/celt/bands.c
